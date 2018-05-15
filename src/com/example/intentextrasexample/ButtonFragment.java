@@ -27,17 +27,12 @@ public class ButtonFragment extends Fragment {
                     OnButtonPressed("Text that the button will change to.");
                     break;
             }
-
-
         }
     };
-
-
 
     public ButtonFragment() {
         // Required empty public constructor
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -75,7 +70,5 @@ public class ButtonFragment extends Fragment {
         if(mListener != null){
             mListener.onFragmentInteraction(text);
         }
-
     }
-
 }
