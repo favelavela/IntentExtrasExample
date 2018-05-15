@@ -3,13 +3,11 @@ package com.example.intentextrasexample;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.Fragment;
-import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.TextView;
 
 import static android.os.Build.VERSION_CODES.HONEYCOMB;
 
@@ -18,6 +16,7 @@ public class ButtonFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
     private Button button;
+    ButtonPressed setText;
 
     private View.OnClickListener onClickListener = new View.OnClickListener() {
         @Override
@@ -25,6 +24,7 @@ public class ButtonFragment extends Fragment {
             switch(view.getId()){
                 case R.id.button1:
                     OnButtonPressed("Text that the button will change to.");
+                    setText.setText();
                     break;
             }
 
@@ -52,6 +52,7 @@ public class ButtonFragment extends Fragment {
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
+        setText = (ButtonPressed) getActivity();
         if (activity instanceof OnFragmentInteractionListener) {
             mListener = (OnFragmentInteractionListener) activity;
         } else {
