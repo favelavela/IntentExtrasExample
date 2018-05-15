@@ -27,8 +27,6 @@ public class ButtonFragment extends Fragment {
                     OnButtonPressed("Text that the button will change to.");
                     break;
             }
-
-
         }
     };
 
